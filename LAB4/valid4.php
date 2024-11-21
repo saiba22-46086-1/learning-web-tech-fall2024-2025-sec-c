@@ -1,49 +1,37 @@
-<html lang="en">
+<html>
 <head>
-    
-    <title>Select Gender</title>
+    <title>Form 4</title>
 </head>
 <body>
-    <form action="valid4.php" method="POST">
+    <form action="" method="POST">
         <fieldset>
-          
             <legend><b>Gender</b></legend>
-           
-           <input type="radio" name="gender" value="Male">Male
-           
-          
-     
-           <input type="radio" name="gender" value="Female" >Female
-          
-       
-           <input type="radio" name="gender" value="Others" >Other
-         <hr>
-       <input type="submit" name="submit" value="Submit">
-   </fieldset>
-</form>
-
-        
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other
+            <hr>
+            <input type="submit" name="submit" value="Submit">
+        </fieldset>
+    </form>  
 
     <?php
-     
-      if(isset($gender))
-      {
-          
-      
+    if(isset($_POST['gender']))
+    {
+        $gender = $_POST['gender'];
+
+        if (!empty($gender))
+        {
+            echo 'Gender is selected';
+        }
+    }
 
     
-      if (!empty($gender)) 
-      {
-
-          echo "<p><b>Selected Gender:</b> {$gender}</p>";
-      } 
-      else {
-
-          echo "<p>Please select a gender.</p>";
-      }
-
+    else
+    {
+        echo "Gender is not selected";
     }
     
-?>
+    ?>
+
 </body>
 </html>
