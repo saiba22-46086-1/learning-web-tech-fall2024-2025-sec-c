@@ -6,7 +6,7 @@
     <form action="" method="POST">
         <fieldset>
             <legend><b>Blood Group</b></legend>
-            <select name="bg">
+            <select name="bgrp">
                 <option value=""></option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -23,10 +23,10 @@
     </form>
 
     <?php
-    if (isset($_POST['bg']))
+    if (isset($_POST['bgrp']))
     {
-        $bg = $_POST['bg']; 
-        if (empty($bg))
+        $bgrp = $_POST['bgrp']; 
+        if (empty($bgrp))
         {
             echo "Select the blood group";
         }
