@@ -5,7 +5,7 @@
 <body>
         <h1>login page </h1>
 
-        <form action="labexam.php" method="POST">
+        <form action="home.php" method="POST">
 
             <table width="40%" align="center" height="50%">
                 <tr>
@@ -28,8 +28,42 @@
 
                     </td>    
              </tr>
+             <tr>
+
+             <td></td>
+                        <td>
+                           
+                            <input type="submit" name="login" value="login" />
+                           
+                        </td>
+
+            </tr>
 
 </table>
 </fieldset>
+<?php
+    session_start();
+    if (isset($_REQUEST['login']))
+    {
+        $name = $_POST['name'];
+        $password = $_POST['password'];
+
+        if ($name == $_SESSION[' stored_infos']['name'] && $password == $_SESSION['stored_infos'][' password'])
+        {
+            $_SESSION['status'] = true;
+            header('location: home.php');
+        }
+
+        else
+        {
+            header('location: registration_form.html');
+        }
+    }
+    
+   
+?>
+
+
+  
 </body>
 </html>
