@@ -118,7 +118,8 @@ if (isset($_REQUEST['submit']))
     {
         $_SESSION['status'] = true;
         $stored_info=['name'=> $name ,'email'=> $emailid , 'gender'=>$gender,'day'=>$day,'month'=>$month,'year'=>$year,'phonenum'=>$phonenum,'password'=>$password];
-        header('location: home.php');
+        $_SESSION['stored_infos']=$stored_info;
+        header('location: login.php');
     }
    
     else
